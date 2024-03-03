@@ -9,18 +9,20 @@ from abc import abstractmethod
 
 class FileReader:
     """A file reader."""
-    def __init__(self, file_path):
+    def __init__(self, file_path: str):
         if os.path.isfile(file_path):
             self.file_path = file_path
+        else:
+            print("Not a file.")
 
-    def size(self):
+    def size(self) -> float:
         """
         Returns the file's size.
         :return: The file size.
         """
         return os.stat(self.file_path).st_size
 
-    def name(self):
+    def name(self) -> str:
         """
         Return the file name.
         :return: File name.
@@ -29,5 +31,7 @@ class FileReader:
     
     @abstractmethod
     def read(self):
-        """Abstract method."""
+        """
+        Abstract method that reeds from the file.
+        """
         pass
