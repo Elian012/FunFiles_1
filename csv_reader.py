@@ -15,10 +15,15 @@ class CsvReader(FileReader):
         Prints every cell contact according to the max number of char in one column.
         :param numb_of_character: Number of character we want to print.
         """
+        difference = 0
         with open(self.file_path, 'r') as file:
             csvreader = csv.reader(file)
             for row in csvreader:
-                if len(row[0]) > numb_of_character:
-                    print(row[0][:numb_of_character])
-                else:
-                    print(row[0])
+                for cell in row:
+                    difference = numb_of_character - len(cell)
+                    if difference > 0:
+                        print(cell[:numb_of_character], end=f"{' ' * difference}| ")
+                    else:
+                        print(cell[:numb_of_character], end="| ")
+                print()
+
