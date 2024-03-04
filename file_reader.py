@@ -32,6 +32,6 @@ class FileReader:
     @abstractmethod
     def read(self):
         """
-        Abstract method that reeds from the file.
+        Abstract method that reads from the file.
         """
         pass
