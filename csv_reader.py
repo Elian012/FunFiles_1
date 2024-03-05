@@ -6,7 +6,7 @@
 import csv
 
 from FunFiles_1.file_reader import FileReader
-from FunFiles_1.read_handler import csv_read_handler
+from FunFiles_1.csv_file_read_handler import cell_print_handler
 
 
 class CsvReader(FileReader):
@@ -20,6 +20,6 @@ class CsvReader(FileReader):
             csvreader = csv.reader(file)
             for row in csvreader:
                 for cell in row:
-                    csv_read_handler(cell, numb_of_character)
+                    cell_print_handler(cell, numb_of_character)
                 print()
 
