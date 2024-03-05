@@ -6,6 +6,7 @@
 import csv
 
 from FunFiles_1.file_reader import FileReader
+from FunFiles_1.read_handler import csv_read_handler
 
 
 class CsvReader(FileReader):
@@ -13,17 +14,12 @@ class CsvReader(FileReader):
     def read(self, numb_of_character: int = 5):
         """
         Prints every cell contact according to the max number of char in one column.
-        :param numb_of_character: Number of character we want to print.
+        :param numb_of_character: Number of characters we want to print.
         """
-        difference = 0
         with open(self.file_path, 'r') as file:
             csvreader = csv.reader(file)
             for row in csvreader:
                 for cell in row:
-                    difference = numb_of_character - len(cell)
-                    if difference > 0:
-                        print(cell[:numb_of_character], end=f"{' ' * difference}| ")
-                    else:
-                        print(cell[:numb_of_character], end="| ")
+                    csv_read_handler(cell, numb_of_character)
                 print()
 
