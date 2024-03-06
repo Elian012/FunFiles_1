@@ -6,7 +6,7 @@
 import csv
 
 from FunFiles_1.file_reader import FileReader
-from FunFiles_1.csv_file_read_handler import cell_print_handler
+from FunFiles_1.csv_print_util import cell_print_handler
 
 
 class CsvReader(FileReader):
