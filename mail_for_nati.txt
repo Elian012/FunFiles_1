@@ -1,0 +1,9 @@
+from: kerem_girl@alkerem.com
+
+to: nati@alkerem.com nati@alkerem.com nati@alkerem.com 
+
+cc: nati@alkerem.com 
+
+header: Nati fav singer
+
+body: Dear Nati. I saw your TikTok account. Your singing is incredible! You are my favorite singer ever!!!!
