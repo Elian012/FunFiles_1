@@ -11,7 +11,7 @@ from FunFiles_1.json_reader import JsonReader
 from FunFiles_1.text_reader import TextReader
 
 
-def dir_wallk(path):
+def dir_wallk(path: str) -> list:
     """
     Makes a list of FileReader objects.
     :param path: Dir path.
@@ -27,7 +27,7 @@ def dir_wallk(path):
 
 def is_file_reader_object(file_path: str) -> bool:
     """
-    Checks if the path is one of the three objects.
+    Checks if the path is one of the three optional files (txt, csv, json).
     :param file_path: File path.
     :return: True if it's a FileReader object.
     """
@@ -37,8 +37,8 @@ def is_file_reader_object(file_path: str) -> bool:
 
 def make_file_object(file_path: str) -> FileReader:
     """
-    Makes an object.
-    :param file_path:
+    Makes a FileReader object based on the file type.
+    :param file_path: File path.
     :return: One of three objects that inherits from FileReader.
     """
     file_extension = os.path.splitext(file_path)[1]
