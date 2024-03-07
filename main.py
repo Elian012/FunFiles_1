@@ -1,14 +1,20 @@
-from FunFiles_1.csv_reader import CsvReader
-from FunFiles_1.text_reader import TextReader
+"""
+ Author: Elian
+ Purpose: Runs on a list of objects and print the files.
+ Date: 07.03.2024
+"""
+from FunFiles_1.dir_walk_func import dir_wallk
+
+ONE_MEGA_BYTE = 1000000
 
 
 def main():
-    file_path_1 = r"C:\Users\USER\PycharmProjects\mailBox\mail_for_nati.txt"
-    file_path_2 = r"C:\Users\USER\PycharmProjects\mailBox\work.csv"
-    text_reader_check = TextReader(file_path_1)
-    #text_reader_check.read()
-    csv_reader_check = CsvReader(file_path_2)
-    csv_reader_check.read()
+    """Entry point"""
+    file_reader_list = dir_wallk(r"C:\Users\USER\PycharmProjects\FunFiles\FunFiles_1")
+    for file_read_object in file_reader_list:
+        if file_read_object.size() < ONE_MEGA_BYTE:
+            file_read_object.read()
+            print()
 
 
 if __name__ == '__main__':
